@@ -93,8 +93,8 @@ main(){
 
 nextdns(){
     main
-    wget -O /etc/systemd/system/dnsproxy-upstream.service https://raw.githubusercontent.com/9bingyin/dnsproxy-nextdns/main/services/upstream.service
-    wget -O /etc/systemd/system/dnsproxy.service https://raw.githubusercontent.com/9bingyin/dnsproxy-nextdns/main/services/nextdns.service
+    wget -O /etc/systemd/system/dnsproxy-upstream.service https://raw.githubusercontent.com/Bingyin-s-HomeLab/NextDNS-Client/main/services/upstream.service
+    wget -O /etc/systemd/system/dnsproxy.service https://raw.githubusercontent.com/Bingyin-s-HomeLab/NextDNS-Client/main/services/nextdns.service
     read -p "NextDNS ID：" query
     sed -i "s|dns-query|${query}|g" /etc/systemd/system/dnsproxy.service
     systemctl daemon-reload
