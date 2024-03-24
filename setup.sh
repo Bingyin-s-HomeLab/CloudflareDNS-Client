@@ -94,8 +94,8 @@ main(){
 nextdns(){
     main
     wget -O /etc/systemd/system/dnsproxy.service https://raw.githubusercontent.com/Bingyin-s-HomeLab/CloudflareDNS-Client/main/services/nextdns.service
-    read -p "Cloudflare DNS ID：" expname
-    sed -i "s|dns-query|${query}|g" /etc/systemd/system/dnsproxy.service
+    read -p "Cloudflare DNS ID：" query
+    sed -i "s|expname|${query}|g" /etc/systemd/system/dnsproxy.service
     systemctl daemon-reload
     systemctl restart dnsproxy
     systemctl enable dnsproxy
